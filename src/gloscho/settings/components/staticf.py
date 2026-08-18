@@ -9,3 +9,9 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT=f"{BASE_DIR}/staticfiles"  # type:ignore
 
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
