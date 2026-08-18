@@ -1,11 +1,154 @@
+{%load static%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gloScho</title>
-</head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="{% static 'logo.png' %}">
+	<title>gloScho</title>
+	<!--~~~~~~~~~~~~~~~ Remix Icon ~~~~~~~~~~~~~~~-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+	<link rel="stylesheet" href="{% static 'gloscho/css/index.css'%}">
+	<!--Meta data-->
+	{% include 'base/gloschometa.html' %}
+</head> 
+
+
 <body>
-    <p>Welcome to the lobby</p>
+    <header id="navbar" class="bg-white w-full top-0 left-0 z-50 fixed border-b border-yellow-500 md:border-none">
+        <nav class="flex items-center justify-between h-16 w-full sm:h-20 lg:p-4">
+			<!-- top-left text  -->
+			<div class="font-p052 text-green-700 font-extrabold text-2xl lg:p-2 lg:text-4xl">
+				<span>glo</span><span class="text-yellow-500">S</span><span>cho</span>
+			</div>
+			<!-- top menu options  -->
+			<div id="nav-menu" class="font-p052 absolute top-0 -left-full min-h-screen w-full bg-white/80 backdrop-blur-sm flex items-center justify-center lg:justify-evenly duration-300 lg:static lg:min-h-fit lg:bg-transparent lg:p-2 overflow-hidden">
+				<ul class="flex flex-col items-center gap-8 lg:flex-row">
+					<li>
+						<a class="nav-link" href="#home">Home</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">About</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">Services</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">Pricing</a>
+					</li>
+				</ul>
+				<div class="theme-btn absolute border border-black rounded-md mb-2 lg:mb-0 bottom-0 lg:relative lg:left-4 flex overflow-hidden" id="theme-toggle-btn">
+					<button class="btn p-2 bg-green-700 hover:cursor-pointer hover:bg-yellow-300 duration-300">
+						<i class="ri-sun-line"></i>
+					</button>
+					<button class="btn p-2 hover:bg-yellow-300 hover:cursor-pointer duration-300">
+						<i class="ri-moon-line"></i>
+					</button>
+				</div>
+			</div>
+			<!-- mobile menu harmburger  -->
+			<div class="text-3xl p-4 cursor-pointer z-50 lg:hidden">
+				<i class="ri-menu-line" id="hamburger"></i>
+			</div>
+		</nav>
+    </header>
+
+    <main>
+		<section id="home" class="p-16 md:p-28 bg-white">
+			<div>
+				<div></div>
+				<div></div>
+				<div class="flex flex-col items-center gap-5 lg:flex-row">
+					<div class="w-full space-y-5 flex flex-col items-center justify-center lg:w-1/2">
+						<p class="mt-20">
+							A modular platform designed to adapt to many curricula for one or many learning institutions while keeping administration simple.
+						</p>
+						<div class="flex gap-2 flex-col sm:flex-row sm:gap-4 lg:pt-5 xl:pt-10">
+							<button id="loginbutton" class="btn rounded-md  bg-green-700">
+								<span>Login</span>
+								<i class="ri-login-circle-line"></i>
+							</button>
+							<button id="signupbutton" class="btn rounded-md border border-yellow-300 btn_outline">
+								<span>Signup</span>
+								<i class="ri-ball-pen-line"></i>
+							</button>
+						</div>
+						<p class="font-sgothic text-xs">
+							Elevate,...
+						</p>
+						<div class="flex items-center gap-5 text-lg lg:pt-10 ">
+							<i class="ri-facebook-fill hover:text-yellow-300 duration-300 hover:cursor-pointer "></i>
+							<i class="ri-twitter-x-line hover:text-yellow-300 duration-300 text-base hover:cursor-pointer"></i>
+							<i class="ri-whatsapp-line hover:text-yellow-300 duration-300 hover:cursor-pointer"></i>
+							<i class="ri-mail-ai-line hover:text-yellow-300 duration-300 hover:cursor-pointer"></i>
+						</div>
+					</div>
+					<div class="w-full relative lg:w-1/2 items-center justify-center flex">
+						<img src="{% static '/logo.png' %}" class="max-w-[85%] lg:p-20" alt="gloscho_logo">
+						<div class="absolute -top-10 lg:top-5 right-0 opacity-30 animate-moving-y hidden sm:block">
+							<i class="ri-macbook-line text-6xl text-green-700"></i>
+						</div>
+						<div class="absolute bottom-0 left-0 opacity-30 xl:bottom-12 animate-moving-y hidden sm:block">
+							<i class="ri-book-line text-6xl text-green-700"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    </main>
+
+    <footer class="p-16 md:pt-20 relative bg-white" id="about">
+		<!-- social icon -->
+		<div class="p-16">
+			<div class="border-b border-green-500 relative">
+				<div class="absolute top-0 left-0 right-0 transform max-w-60 -translate-y-1/2  mx-auto">
+						<div class="bg-white text-lg text-center space-x-2">
+								<i class="ri-facebook-fill hover:text-yellow-300 duration-300 cursor-pointer text-2xl"></i>
+								<i class="ri-twitter-x-line hover:text-yellow-300 duration-300 cursor-pointer text-2xl"></i>
+								<i class="ri-whatsapp-line hover:text-yellow-300 duration-300 cursor-pointer text-2xl"></i>
+								<i class="ri-mail-ai-line hover:text-yellow-300 duration-300 cursor-pointertext-2xl text-2xl"></i>
+						</div>
+				</div>
+			</div>
+		</div>
+		<!-- content -->
+		<div class="p-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-evenly items-center text-center gap-8 md:text-start">
+			<!-- item - 1  -->
+			<div>
+				<div class="text-7xl text-green-700 text-center inline-block">
+					<img src="../assets/logo.png" alt="" class="max-w-28 rounded-xl">
+				</div>
+			</div>
+			<!-- item 2  -->
+			<div>
+				<p class="mb-5 font-bold text-xl">API Docs</p>
+				<div class="flex flex-col gap-1">
+					<a href="">howtos ...</a>
+					<a href="">Coming Soon ...</a>
+					<a href="">Coming Soon ...</a>
+				</div>
+			</div>
+			<!-- item 4  -->
+			<div>
+				<p class="mb-5 font-bold text-xl">Contact us</p>
+				<div class="flex flex-col gap-1">
+					<a href="tel:+254768063352"> <i class="ri-phone-line"></i> +254768063352</a>
+					<a href="mailto:contact@gloscho.com"><i class="ri-mail-line"></i> contact@gloscho.com</a>
+					<br>
+					<p>
+						<i class="ri-map-pin-line"></i>Remote, Earth
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="">
+			<p class="text-center opacity-50">
+				Copyright &copy; 2026 gloscho. All rights reserved.
+			</p>
+		</div>
+    </footer>
+
+	<script src="{% static '/gloscho/js/index.js' %}"></script>
 </body>
 </html>
