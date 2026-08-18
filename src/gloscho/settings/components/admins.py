@@ -1,0 +1,1 @@
+ADMINS = ['"J, Mohammed" <mohammedkutunzajuma@gmail.com>']

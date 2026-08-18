@@ -84,7 +84,7 @@
 						</div>
 					</div>
 					<div class="w-full relative lg:w-1/2 items-center justify-center flex">
-						<img src="{% static '/logo.png' %}" class="max-w-[85%] lg:p-20" alt="gloscho_logo">
+						<img src="{% static 'logo.png' %}" class="max-w-[85%] lg:p-20" alt="gloscho_logo">
 						<div class="absolute -top-10 lg:top-5 right-0 opacity-30 animate-moving-y hidden sm:block">
 							<i class="ri-macbook-line text-6xl text-green-700"></i>
 						</div>
@@ -116,7 +116,7 @@
 			<!-- item - 1  -->
 			<div>
 				<div class="text-7xl text-green-700 text-center inline-block">
-					<img src="../assets/logo.png" alt="" class="max-w-28 rounded-xl">
+					<img src="{% static 'logo.png' %}" alt="" class="max-w-28 rounded-xl">
 				</div>
 			</div>
 			<!-- item 2  -->
@@ -149,6 +149,6 @@
 		</div>
     </footer>
 
-	<script src="{% static '/gloscho/js/index.js' %}"></script>
+	<script src="{% static 'gloscho/js/index.js' %}"></script>
 </body>
 </html>
