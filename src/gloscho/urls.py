@@ -13,5 +13,7 @@ urlpatterns = [
     #project urls
     path("", views.homepage, name="main_app_home"),
     #apps urls
+    path("chief/", include("chiefs.urls")),
     #3rd party urls
+    path("accounts/", include("allauth.urls")),
 ]

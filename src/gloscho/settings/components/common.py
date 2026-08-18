@@ -65,6 +65,13 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
     "django.contrib.postgres",
+    # 3rd party apps 
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    # custom project apps 
+    "accounts",
+    "chiefs",
 ]
 
 MIDDLEWARE = [
@@ -78,6 +85,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #custom middleware
+    "allauth.account.middleware.AccountMiddleware",
     "django.middleware.csp.ContentSecurityPolicyMiddleware", #for csp
 ]
 
@@ -141,3 +149,4 @@ USE_I18N = True
 USE_TZ = True
 
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
+AUTH_USER_MODEL = "accounts.CustomUser"
