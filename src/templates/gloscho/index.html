@@ -64,15 +64,21 @@
 							A modular platform designed to adapt to many curricula for one or many learning institutions while keeping administration simple.
 						</p>
 						<div class="flex gap-2 flex-col sm:flex-row sm:gap-4 lg:pt-5 xl:pt-10">
-							<button id="loginbutton" class="btn rounded-md  bg-green-700">
-								<span>Login</span>
-								<i class="ri-login-circle-line"></i>
-							</button>
-							<button id="signupbutton" class="btn rounded-md border border-yellow-300 btn_outline">
-								<span>Signup</span>
-								<i class="ri-ball-pen-line"></i>
-							</button>
-						</div>
+							{% if user.is_authenticated %}
+								<a href="{% url 'account_logout' %}" style="margin-top: 1rem;" class="btn btn_outline rounded-md border border-yellow-500">
+									Logout
+								</a>
+							{% else %}
+								<button class="btn rounded-md  bg-green-700" id="loginbutton" data-url="{% url 'account_login' %}">
+									<span>Login</span>
+									<i class="ri-login-circle-line"></i>
+								</button>
+								<button class="btn rounded-md border border-yellow-300 btn_outline"  id="signupbutton" data-url="{% url 'account_signup' %}">
+									<span>Signup</span>
+									<i class="ri-ball-pen-line"></i>
+								</button>
+							{%endif%}
+                        </div>
 						<p class="font-sgothic text-xs">
 							Elevate,...
 						</p>
