@@ -27,4 +27,4 @@ class ChiefProfile(models.Model):
     )
 
     def __str__(self):
-        return f"{self.chief_id} --- {self.chief_email}"
+        return f"{self.chief_id} --- {self.user.email}"
