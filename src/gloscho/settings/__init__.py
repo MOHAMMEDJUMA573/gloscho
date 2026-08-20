@@ -22,6 +22,7 @@ base_settings = [
     'components/rq.py',
     'components/staticf.py',
     'components/emails.py',
+    'components/allauths.py',
     'components/timez.py',
     optional('environments/{0}.py'.format(ENV)),
 ]

@@ -65,10 +65,15 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
     "django.contrib.postgres",
-    # 3rd party apps 
+    "django.contrib.humanize",
+    # 3rd party apps
+    "allauth_ui",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "widget_tweaks",
+    "slippers",
+    'allauth.usersessions',
     # custom project apps 
     "accounts",
     "chiefs",
@@ -86,6 +91,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #custom middleware
     "allauth.account.middleware.AccountMiddleware",
+    "allauth.usersessions.middleware.UserSessionsMiddleware",
     "django.middleware.csp.ContentSecurityPolicyMiddleware", #for csp
 ]
 
