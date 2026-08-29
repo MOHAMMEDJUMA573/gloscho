@@ -8,14 +8,13 @@ import uuid
 def table_exists(table_name):
     return table_name in connection.introspection.table_names()
 
- # function to generate user primary keys
+# function to generate user primary keys
 def generate_unique_user_id():
-    new_id = uuid.uuid4()
-    table_name = "accounts_CustomUser"
-    if table_exists(table_name):
-        while CustomUser.objects.filter(user_id=new_id).exists():
-            new_id = uuid.uuid4()
-    return new_id
+    return uuid.uuid4()
+
+# function to generate initial username
+def generate_unique_user_name():
+    return uuid.uuid4().hex
 
 # Create your models here.
 class CustomUser(AbstractUser):
@@ -52,17 +51,22 @@ class CustomUser(AbstractUser):
     ]
 
     USER_TYPE_CHOICES = (
-        ("institution", "Institution"),
+        ("chief", "Chief"),
         ("instructor", "Instructor"),
         ("student", "Student"),
         ("guardian", "Guardian"),
         ("other", "Other"),
     )
-    #primary key for every user
     user_id = models.UUIDField(
         primary_key=True,
         default=generate_unique_user_id,
         editable=False,
+        unique=True
+    )
+    username = models.CharField(
+        max_length=32,
+        default=generate_unique_user_name,
+        help_text="account's username",
         unique=True
     )
     user_type = models.CharField(

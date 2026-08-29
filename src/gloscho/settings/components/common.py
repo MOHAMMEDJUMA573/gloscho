@@ -89,10 +89,12 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.LoginRequiredMiddleware", #login required everywhere
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #custom middleware
+    #3rd party middleware
     "allauth.account.middleware.AccountMiddleware",
     "allauth.usersessions.middleware.UserSessionsMiddleware",
     "django.middleware.csp.ContentSecurityPolicyMiddleware", #for csp
+    # custom middleware
+    "accounts.middleware.LogUserIPAddressMiddleware",
 ]
 
 SECURE_CSP = {

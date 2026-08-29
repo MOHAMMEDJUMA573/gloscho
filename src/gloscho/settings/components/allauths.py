@@ -6,19 +6,6 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-ACCOUNT_FORMS = {
-    'add_email': 'allauth.account.forms.AddEmailForm',
-    'change_password': 'allauth.account.forms.ChangePasswordForm',
-    'confirm_login_code': 'allauth.account.forms.ConfirmLoginCodeForm',
-    'login': 'allauth.account.forms.LoginForm',
-    'request_login_code': 'allauth.account.forms.RequestLoginCodeForm',
-    'reset_password': 'allauth.account.forms.ResetPasswordForm',
-    'reset_password_from_key': 'allauth.account.forms.ResetPasswordKeyForm',
-    'set_password': 'allauth.account.forms.SetPasswordForm',
-    'signup': 'allauth.account.forms.SignupForm',
-    'user_token': 'allauth.account.forms.UserTokenForm',
-}
-
 ACCOUNT_SIGNUP_FIELDS=['email*', 'password1*', 'password2*']
 ACCOUNT_SIGNUP_FORM_HONEYPOT_FIELD="address"
 ACCOUNT_LOGIN_METHODS={"email","username"}
@@ -33,8 +20,9 @@ ACCOUNT_EMAIL_NOTIFICATIONS=True
 ACCOUNT_MAX_EMAIL_ADDRESSES=2
 ACCOUNT_PRESERVE_USERNAME_CASING=False
 ACCOUNT_USERNAME_MIN_LENGTH=4
-
 USERSESSIONS_TRACK_ACTIVITY=True
+
+ACCOUNT_ADAPTER = "accounts.adapter.CustomAccountAdapter"
 
 
 
