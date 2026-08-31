@@ -10,11 +10,11 @@ class CustomAccountAdapter(DefaultAccountAdapter):
     
     def get_login_redirect_url(self, request):
         REDIRECT_MAP = {
-            "chief": "/",
+            "chief": "main_app_home",
             "instructor": "account_logout",
             "student": "account_logout",
             "guardian": "account_logout",
-            "other": "/"
+            "other": "main_app_home"
         }
         user = request.user
         redirect_url = REDIRECT_MAP.get(user.user_type)
