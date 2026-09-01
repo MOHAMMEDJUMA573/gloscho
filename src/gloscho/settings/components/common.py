@@ -93,6 +93,7 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
     "allauth.usersessions.middleware.UserSessionsMiddleware",
     "django.middleware.csp.ContentSecurityPolicyMiddleware", #for csp
+    "django.middleware.gzip.GZipMiddleware",
     # custom middleware
     "accounts.middleware.LogUserIPAddressMiddleware",
 ]
@@ -158,3 +159,4 @@ USE_TZ = True
 
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 AUTH_USER_MODEL = "accounts.CustomUser"
+APPEND_SLASH = True
