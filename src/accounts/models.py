@@ -72,7 +72,7 @@ class CustomUser(AbstractUser):
     user_type = models.CharField(
         max_length=15,
         choices=USER_TYPE_CHOICES,
-        default='other',
+        default="notide",
         help_text="user_type field for allauth modularity"
     )
     user_country = models.CharField(
@@ -92,5 +92,5 @@ class CustomUser(AbstractUser):
     )
 
     def __str__(self):
-        return f"{self.username} ---  {self.user_type} --- {self.user_id} --- {self.user_country}"
+        return f"{self.email} ---  {self.user_type} --- {self.user_id} --- {self.user_country}"
 
