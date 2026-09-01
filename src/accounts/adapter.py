@@ -14,7 +14,7 @@ class CustomAccountAdapter(DefaultAccountAdapter):
             "instructor": "account_logout",
             "student": "account_logout",
             "guardian": "account_logout",
-            "other": "main_app_home"
+            "other": "others:others_app_dashboard"
         }
         user = request.user
         redirect_url = REDIRECT_MAP.get(user.user_type)

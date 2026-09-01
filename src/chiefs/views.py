@@ -9,5 +9,5 @@ from django.utils.translation import gettext_lazy as _
 #Dashboard-chief views
 #***--------------------***
 def dashboard(request):
-    return HttpResponse("Welcome bwana chief")
+    return HttpResponse("Dependent user made by the school")
     
